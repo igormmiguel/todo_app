@@ -49,7 +49,6 @@ app.post('/descompletar', (requisicao, resposta) => {
         if (erro) {
             return console.log(erro)
         }
-
         resposta.redirect('/')
     })
 })
@@ -72,10 +71,12 @@ app.post('/criar', (requisicao, resposta) => {
     })
 })
 
+app.get('/ativas', (requisicao, resposta) => {
+    
+})
+
 app.get('/', (requisicao, resposta) => {
     const sql = 'SELECT * FROM tarefas'
-
-    conexao.query
 
     conexao.query(sql, (erro, dados) => {
         if (erro) {

@@ -1,5 +1,3 @@
-const { application } = require("express")
-
 function completarTarefa(id) {
     fetch("http://localhost:3000/completar", {
         method: "POST",
@@ -32,14 +30,14 @@ function alterarTema() {
     if (tema) {
         let novoTema
 
-        if (tema == "light") {
+        if (tema === "light") {
             novoTema = "dark"
             button.innerHTML = `<img src="/imagens/sun-icon.png" alt="ícone do sol">`
             body.classList.remove("light")
             body.classList.add("dark")
         } else {
             novoTema = "light"
-            button. innerHTML = `<img src="/imagens/moon-icon.png" alt="ícone de lua">`
+            button.innerHTML = `<img src="/imagens/moon-icon.png" alt="ícone de lua">`
             body.classList.remove("dark")
             body.classList.add("light")
         }
@@ -58,14 +56,14 @@ function verificarTema() {
     const button = document.querySelector(".tema-button")
 
     if (tema) {
-        if (tema == "dark") {
+        if (tema === "dark") {
             body.classList.add("dark")
             button.innerHTML = `<img src="/imagens/sun-icon.png" alt="ícone do sol">`
         } else {
             body.classList.add("light")
-            button. innerHTML = `<img src="/imagens/moon-icon.png" alt="ícone de lua">`
+            button.innerHTML = `<img src="/imagens/moon-icon.png" alt="ícone de lua">`
         }
     }
 }
 
-verificarTema ()
+verificarTema()
